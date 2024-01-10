@@ -5,10 +5,13 @@
 
 std::vector<int> double_elements(std::vector<int> target) {
   std::vector<int> result;
-  for (int i = 0; i < target.size(); i++) {
-    result.push_back(target[i] * 2);
-  }
+  // for (int i = 0; i < target.size(); i++) {
+  //   result.push_back(target[i] * 2);
+  // }
 
+  for (auto i : target) {
+    result.push_back(i * 2);
+  }
   return result;
 }
 
