@@ -3,7 +3,7 @@
 
 // コードを入力してください
 
-std::vector<int> double_elements(std::vector<int> target) {
+std::vector<int> double_elements(const std::vector<int> target) {
   std::vector<int> result;
   // for (int i = 0; i < target.size(); i++) {
   //   result.push_back(target[i] * 2);
@@ -15,24 +15,28 @@ std::vector<int> double_elements(std::vector<int> target) {
   return result;
 }
 
-// void double_elements(std::vector<int>& target) {
-//   for (int i = 0; i < target.size(); i++) {
-//     target[i] = target[i] * 2;
-//   }
-
-//   return;
-// }
+void void_double_elements(std::vector<int>& target) {
+  for (auto& i : target) {
+    i *= 2;
+  }
+  return;
+}
 
 int main() {
   std::vector<int> numbers = {1, 2, 3, 4, 5};
 
-  std::vector<int> result = double_elements(numbers);
-
   // コードを入力してください
+  std::vector<int> result = double_elements(numbers);
   for (int i = 0; i < numbers.size(); i++) {
     std::cout << "Result of double_elements: " << result[i] << std::endl;
     std::cout << "Result of origin: " << numbers[i] << std::endl;
   }
 
+  // std::vector<int> numbers2 = {1, 2, 3, 4, 5};
+  // double_elements(numbers2);
+  // for (int i = 0; i < numbers.size(); i++) {
+  //   std::cout << "Result of double_elements: " << result[i] << std::endl;
+  //   std::cout << "Result of origin: " << numbers[i] << std::endl;
+  // }
   return 0;
 }
