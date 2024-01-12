@@ -4,12 +4,13 @@
 
 // コードを入力してください
 
-int element_at(std::vector<int> numbers, int index) {
+int element_at(const std::vector<int>& numbers, int index) {
   int result = 0;
-  if ((index >= numbers.size()) || (index < 0)) {
-    throw std::runtime_error("Index error");
+  if (index >= numbers.size() || index < 0) {
+    throw std::out_of_range("Index error");
   } else {
     result = numbers[index];
+    // int result = numbers.at(index);
   }
 
   return result;
@@ -29,7 +30,7 @@ int main() {
   try {
     int result = element_at(numbers, -1);
     std::cout << result << std::endl;
-  } catch (const std::runtime_error& e) {
+  } catch (const std::out_of_range& e) {
     std::cerr << "Error: " << e.what() << std::endl;
   }
 
